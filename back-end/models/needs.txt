@@ -1,0 +1,8 @@
+Firestore Needs :
+
+ID = char(16)
+Nama = str
+Umur = int
+Email = str
+password = char
+Gender = bool
