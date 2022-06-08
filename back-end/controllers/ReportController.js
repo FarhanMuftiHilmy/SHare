@@ -24,7 +24,7 @@ const getAllReports = async (req, res, next) => {
             res.status(404).send('No report record found');
         }else {
             data.forEach(doc => {
-                const report = new report(
+                const report = new Reports(
                     doc.id,
                     doc.data().userReport,
                     doc.data().titleReport,
