@@ -1,7 +1,7 @@
 'use strict';
 
 const firebase = require('../db');
-const Reports = require('../models/report');
+const Report = require('../models/report');
 const firestore = firebase.firestore();
 
 
@@ -24,7 +24,7 @@ const getAllReports = async (req, res, next) => {
             res.status(404).send('No report record found');
         }else {
             data.forEach(doc => {
-                const report = new Reports(
+                const report = new Report(
                     doc.id,
                     doc.data().userReport,
                     doc.data().titleReport,
@@ -43,10 +43,10 @@ const getAllReports = async (req, res, next) => {
 const getReport = async (req, res, next) => {
     try {
         const id = req.params.id;
-        const reports = await firestore.collection('report').doc(id);
-        const data = await report.get();
+        const reports = await firestore.collection('reports').doc(id);
+        const data = await reports.get();
         if(!data.exists) {
-            res.status(404).send('Users with the given ID not found');
+            res.status(404).send('Reports with the given ID not found');
         }else {
             res.send(data.data());
         }

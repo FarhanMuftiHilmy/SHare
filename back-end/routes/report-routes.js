@@ -1,7 +1,7 @@
 const express = require('express');
 const {addReport, 
+       getAllReports,
        getReport,
-       getAllReport,
        updateReport,
        deleteReport
       } = require('../controllers/ReportController');
@@ -9,7 +9,7 @@ const {addReport,
 const router = express.Router();
 
 router.post('/report', addReport);
-router.get('/reports', getAllReport);
+router.get('/reports', getAllReports);
 router.get('/report/:id', getReport);
 router.put('/report/:id', updateReport);
 router.delete('/report/:id', deleteReport);

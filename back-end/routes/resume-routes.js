@@ -1,7 +1,7 @@
 const express = require('express');
 const {addResume, 
-       getResume,
        getAllResume,
+       getResume,
        updateResume,
        deleteResume
       } = require('../controllers/ResumeController');
