@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const config = require('./config');
 const userRoutes = require('./routes/user-routes');
 const resumeRoutes = require('./routes/resume-routes');
+const reportRoutes = require('./routes/report-routes');
 
 const app = express();
 
@@ -14,6 +15,7 @@ app.use(bodyParser.json());
 
 app.use('/api', userRoutes.routes);
 app.use('/api', resumeRoutes.routes);
+app.use('/api', reportRoutes.routes);
 
 
 
