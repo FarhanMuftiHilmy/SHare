@@ -1,5 +1,5 @@
 class Reports {
-    constructor(id, userReport, titleReport, Report, createdReportby ) {
+    constructor(id, userReport, titleReport, report, createdReportby ) {
             this.id = id;
             this.userReport = userReport;
             this.titleReport = titleReport;
